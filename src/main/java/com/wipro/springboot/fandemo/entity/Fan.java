@@ -15,6 +15,11 @@ public class Fan {
 		this.fanDirection = fanDirection;
 		this.message = message;
 	}
+
+	@Override
+	public String toString() {
+		return "Fan [speedSetting=" + speedSetting + ", fanDirection=" + fanDirection + ", message=" + message + "]";
+	}
 	
 	
 }

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
+<link th:href="@{/css/fan.css}" rel="stylesheet" />
 <title>Ceiling Fan</title>
- <link th:href="@{/css/fan.css}" rel="stylesheet" />
 </head>
 <body>
-<h1 class="message" th:text="${message}"></h1>
 
+<div class="header">
+<h1 class="message" th:text="${message}"></h1>
+</div>
+<div class="container">
 <form action="/fanbasic/leftpullcord" >
     <input type="submit" value="leftcord" class="leftcord"/>
     </form>
@@ -16,9 +18,14 @@
      <input type="submit" value="rightcord" class="rightcord" />
 </form>
  <br></br>
-<form action="/index.html">
+<form action="/fanbasic/index">
      <input type="submit" value="back" class="back" />
 </form>
+</div>
+
+<div class="footer">
+
+</div>
 
 </body>
 </html>

@@ -1,59 +1,45 @@
 package com.wipro.springboot.fandemo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.wipro.springboot.fandemo.rest.FanRestController;
+import com.wipro.springboot.fandemo.entity.Fan;
+import com.wipro.springboot.fandemo.helper.FanHelperImpl;
 
 @Controller
 @RequestMapping("/fanbasic")
 public class FanController {
 	
-	public static String result="The Fan is on off mode";
 	
+	@Autowired
+	private FanHelperImpl fanHelperService;
+	private Fan fan; 
+	
+	
+	@RequestMapping("/index")
+	public String getIndexPage() {
+		return "index";
+	}
 	@RequestMapping("/getfanpage")
 	public String getFanPage(Model theModel) {
-		
-			theModel.addAttribute("message", result);
-		
+		fan=fanHelperService.getLatestFanSettings("getfanpage");
+			theModel.addAttribute("message", fan.message);
 		return "fanpage";
 	}
-	
+
 	@RequestMapping("/leftpullcord")
 	public String leftPullCord(Model theModel) {
-		FanRestController.speedRegulator++;
-		 result=null;
-		if(FanRestController.speedRegulator<=3) {
-			result= "The Speed has been increased to "+ FanRestController.speedRegulator
-					+'\n'+
-					"The Direction is " + (FanRestController.fanDirection.equals("L")? "Anticlockwise":"Clockwise");
-			}else {
-				FanRestController.speedRegulator=0;
-				result= "The Fan has been turned off";
-			}
-		theModel.addAttribute("message", result);
+		fan=fanHelperService.getLatestFanSettings("leftcord");
+		theModel.addAttribute("message", fan.message);
 		return "fanpage";
 	}
 	
 	@RequestMapping("/rightpullcord")
 	public String rightPullCord(Model theModel) {
-		 result=null;
-		if (FanRestController.fanDirection.equals("L")) {
-			FanRestController.fanDirection="R";
-		}else {
-			FanRestController.fanDirection="L";
-		}
-		
-		if(FanRestController.speedRegulator<=3) {
-			result= "The Speed has been increased to "+ FanRestController.speedRegulator
-					+'\n'
-					+ "The Direction is " + (FanRestController.fanDirection.equals("L")? "Anticlockwise":"Clockwise");
-			}else {
-				FanRestController.speedRegulator=0;
-				result= "The Fan has been turned off";
-			}
-		theModel.addAttribute("message", result);
+		fan=fanHelperService.getLatestFanSettings("rightcord");
+		theModel.addAttribute("message", fan.message);
 		return "fanpage";
 	}
 

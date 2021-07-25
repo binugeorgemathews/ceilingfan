@@ -1,5 +1,9 @@
 package com.wipro.springboot.fandemo.rest;
-
+/**
+ * 
+ * @author binu
+ *Customized Exception  Class FanSettingNotFoundException
+ */
 public class FanSettingNotFoundException extends RuntimeException {
 
 	

@@ -3,8 +3,13 @@ package com.wipro.springboot.fandemo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 
+/**
+ * 
+ * @author binu
+ *SpringBootApplication
+ *The Main Entry class loading the application
+ */
 @SpringBootApplication
 @EnableAspectJAutoProxy 
 public class FandemoApplication {

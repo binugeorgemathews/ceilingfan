@@ -1,5 +1,8 @@
 package com.wipro.springboot.fandemo.rest;
-
+/**
+ * @author binu
+ * RestContoller handling Webservice requests
+ */
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +22,11 @@ public class FanRestController {
 	
 	
 
-	//leftcord designed as Speed Regulator
+	/**
+	 * @author binu
+	 * @param value
+	 * @return fan
+	 */
 	@GetMapping("/getregulatorsettings")
 	public Fan getRegulatorSettings(@RequestParam String value) {
 	fan=fanHelperService.getLatestFanSettings(value);

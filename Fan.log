@@ -1,0 +1,4 @@
+2021-07-23 15:39:22.479  INFO 4742 --- [main] c.w.s.fandemo.FandemoApplicationTests    : Starting FandemoApplicationTests using Java 11.0.10 on binus-MacBook-Pro.local with PID 4742 (started by binu in /Users/binu/eclipse-workspace/fandemo)
+2021-07-23 15:39:22.482  INFO 4742 --- [main] c.w.s.fandemo.FandemoApplicationTests    : No active profile set, falling back to default profiles: default
+2021-07-23 15:39:23.859  INFO 4742 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 15:39:24.114  INFO 4742 --- [main] c.w.s.fandemo.FandemoApplicationTests    : Started FandemoApplicationTests in 1.913 seconds (JVM running for 2.863)

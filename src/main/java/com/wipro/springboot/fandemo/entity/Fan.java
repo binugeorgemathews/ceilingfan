@@ -1,5 +1,10 @@
 package com.wipro.springboot.fandemo.entity;
-
+/**
+ * 
+ * @author binu
+ * Fan Entity for Webservice Response having properties defined for Setting
+ *
+ */
 public class Fan {
 
 	
@@ -15,7 +20,9 @@ public class Fan {
 		this.fanDirection = fanDirection;
 		this.message = message;
 	}
-
+	/**
+	 * toString
+	 */
 	@Override
 	public String toString() {
 		return "Fan [speedSetting=" + speedSetting + ", fanDirection=" + fanDirection + ", message=" + message + "]";
